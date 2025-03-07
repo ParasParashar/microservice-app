@@ -13,6 +13,14 @@ export class AppService {
   ) { }
 
   async getProducts() {
-    return this.productClient.send({ cmd: 'get_products' }, {});
+    const products = this.productClient
+      .send({ cmd: 'get_products' }, {})
+    console.log(products, 'data of the event from the product service')
+    return products;
+  }
+  async getUsers() {
+    const products = this.userClient
+      .send({ cmd: 'get_users' }, {})
+    return products;
   }
 }

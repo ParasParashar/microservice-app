@@ -12,4 +12,8 @@ export class ProductServiceService {
   async findAll(): Promise<Product[]> {
     return this.productRepository.find();
   }
+
+  async create(data: any) {
+    return this.productRepository.save(data);
+  }
 }
